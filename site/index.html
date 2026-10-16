@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>BIA — Case Study | Rhapsody</title>
+<meta name="description" content="For the BioIndustry Association, an impactful and meaningful campaign to raise awareness about the digital and data-focused career opportunities in the biotech and life science industry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C0D52;          /* frame background, pill text */
+    --lilac:#D2B4ED;        /* pills, sub-head, underscore */
+    --lilac-soft:#D9B3F3;   /* body copy */
+    --white:#fff;
+    --gutter:clamp(22px, 5vw, 86px);
+    --stage-max:1560px;
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--white);
+    font-family:Inter, "Helvetica Neue", Arial, sans-serif;
+    font-synthesis-weight:none;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  /* ---------- corner brackets ---------- */
+  .bracket{position:fixed;width:26px;height:26px;z-index:5;pointer-events:none}
+  .bracket::before,.bracket::after{content:"";position:absolute;background:var(--white)}
+  .bracket::before{width:4px;height:22px}
+  .bracket::after{height:4px;width:22px}
+  .bracket.tl{top:var(--edge);left:var(--edge)}
+  .bracket.tl::before{right:0;top:0}
+  .bracket.tl::after{left:0;bottom:0}
+  .bracket.br{bottom:var(--edge);right:var(--edge)}
+  .bracket.br::before{left:0;bottom:0}
+  .bracket.br::after{right:0;top:0}
+  body{--edge:clamp(14px,2.2vw,28px)}
+
+  /* ---------- vertical wordmark ---------- */
+  .edge-mark{
+    position:fixed;right:clamp(10px,1.6vw,24px);top:50%;
+    transform:translateY(-50%);
+    width:20px;opacity:.95;z-index:5;pointer-events:none;
+  }
+  .edge-mark img{display:block;width:100%;height:auto}
+
+  /* ---------- shell ---------- */
+  .eyebrow{
+    text-align:center;
+    font-size:clamp(13px,1.15vw,19px);
+    letter-spacing:.015em;
+    padding:clamp(20px,3.2vh,40px) 0 0;
+    position:relative;z-index:2;
+  }
+
+  .stage{
+    max-width:var(--stage-max);
+    margin:0 auto;
+    padding:clamp(34px,5.5vh,72px) var(--gutter) clamp(52px,7vh,90px);
+    display:grid;
+    grid-template-columns:minmax(0,0.84fr) minmax(0,1.16fr);
+    gap:clamp(34px,4.4vw,78px);
+    align-items:center;
+    min-height:calc(100vh - 70px);
+  }
+
+  /* ---------- copy column ---------- */
+  .display{
+    margin:0;
+    font-family:"Cormorant Garamond", Georgia, serif;
+    font-weight:300;
+    font-size:clamp(76px,8.4vw,146px);
+    line-height:.96;
+    letter-spacing:.005em;
+    display:flex;
+    align-items:baseline;
+  }
+  .display .mark{
+    font-family:Inter, sans-serif;
+    font-weight:500;
+    color:var(--lilac);
+    font-size:.62em;
+    margin-left:.015em;
+    transform:translateY(-.02em);
+  }
+
+  .lede{
+    margin:clamp(30px,4.4vh,52px) 0 0;
+    max-width:30ch;
+    color:var(--lilac-soft);
+    font-size:clamp(18px,1.5vw,29px);
+    line-height:1.33;
+    font-weight:400;
+  }
+
+  .util{
+    margin:clamp(30px,4.6vh,52px) 0 0;
+    color:var(--lilac);
+    font-size:clamp(17px,1.42vw,27px);
+    font-weight:700;
+    line-height:1.2;
+  }
+
+  .tags{
+    list-style:none;
+    display:flex;flex-wrap:wrap;
+    gap:clamp(8px,.72vw,13px);
+    margin:clamp(14px,1.9vh,22px) 0 0;padding:0;
+    font-size:clamp(13px,1.03vw,20px);
+    max-width:30em;                /* holds the original 3 / 2 / 3 wrap rhythm */
+  }
+  .tags li{
+    background:var(--lilac);
+    color:var(--ink);
+    font-weight:700;
+    font-size:inherit;
+    letter-spacing:.01em;
+    line-height:1;
+    padding:.66em .86em .72em;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+
+  /* ---------- collage ---------- */
+  .collage{
+    position:relative;
+    width:100%;
+    aspect-ratio:1068 / 848;
+  }
+  .collage figure{position:absolute;margin:0}
+  .collage img{display:block;width:100%;height:auto}
+
+  .p-lab   {left:0;      top:4.83%;  width:46.91%; z-index:1}
+  .p-team  {left:50.09%; top:28.42%; width:49.91%; z-index:2}
+  .p-screen{left:47.66%; top:0;      width:34.27%; z-index:3}
+  .p-circle{left:8.05%;  top:58.49%; width:41.95%; z-index:4}
+  .p-strip {left:50.75%; top:80.66%; width:25.09%; z-index:5}
+
+  /* ---------- entrance ---------- */
+  .rise{opacity:0;transform:translateY(16px);animation:rise .85s cubic-bezier(.22,.7,.3,1) forwards}
+  .rise:nth-child(1){animation-delay:.05s}
+  .d1{animation-delay:.14s}.d2{animation-delay:.22s}.d3{animation-delay:.3s}
+  .collage figure{opacity:0;transform:translateY(22px) scale(.985);animation:rise .95s cubic-bezier(.22,.7,.3,1) forwards}
+  .p-lab{animation-delay:.18s}.p-team{animation-delay:.26s}.p-screen{animation-delay:.34s}
+  .p-circle{animation-delay:.42s}.p-strip{animation-delay:.5s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    .rise,.collage figure{animation:none;opacity:1;transform:none}
+  }
+
+  /* ---------- stacked layout ---------- */
+  @media (max-width:980px){
+    .stage{
+      grid-template-columns:minmax(0,1fr);
+      gap:clamp(40px,6vh,64px);
+      min-height:0;
+      align-items:start;
+    }
+    .lede{max-width:34ch}
+    .edge-mark{display:none}
+  }
+
+  /* below this the collage gets too small to read — reflow it */
+  @media (max-width:620px){
+    .collage{aspect-ratio:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .collage figure{position:static;width:auto !important}
+    .p-lab,.p-team{grid-column:span 2}
+    .collage img{border-radius:4px}
+  }
+</style>
+</head>
+<body>
+
+<span class="bracket tl" aria-hidden="true"></span>
+<span class="bracket br" aria-hidden="true"></span>
+<div class="edge-mark" aria-hidden="true"><img src="assets/mark-vertical.svg" alt=""></div>
+
+<p class="eyebrow rise">Case Study</p>
+
+<main class="stage">
+  <div class="copy">
+    <h1 class="display rise d1">BIA<span class="mark" aria-hidden="true">_</span></h1>
+
+    <p class="lede rise d2">For the BioIndustry Association, an impactful and meaningful campaign
+      to raise awareness about the digital and data-focused career opportunities in the biotech
+      and life science industry.</p>
+
+    <h2 class="util rise d3">Rhapsody Utilisation:</h2>
+    <ul class="tags rise d3">
+      <li>Design</li>
+      <li>Creative Strategy</li>
+      <li>Campaign Design</li>
+      <li>Social Media Content</li>
+      <li>Asset Creation</li>
+      <li>Organic Social</li>
+      <li>Paid Social</li>
+      <li>Video Production</li>
+    </ul>
+  </div>
+
+  <div class="collage">
+    <figure class="p-lab"><img src="assets/photo-lab.webp" width="1003" height="788" alt="Researcher holding a blood sample vial, layered over a stained tissue slide." loading="eager"></figure>
+    <figure class="p-team"><img src="assets/photo-team.webp" width="1060" height="810" alt="Gloved hands working with a culture plate under laboratory light." loading="lazy"></figure>
+    <figure class="p-screen"><img src="assets/photo-screen.webp" width="733" height="489" alt="Gloved hands cupping a sample above a patterned surface." loading="lazy"></figure>
+    <figure class="p-circle"><img src="assets/photo-circle.webp" width="897" height="694" alt="Molecular model rendered in pale blue." loading="lazy"></figure>
+    <figure class="p-strip"><img src="assets/photo-strip.webp" width="537" height="330" alt="Two petri dishes showing bacterial cultures." loading="lazy"></figure>
+  </div>
+</main>
+
+</body>
+</html>
