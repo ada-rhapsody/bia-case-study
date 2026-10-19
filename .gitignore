@@ -1,0 +1,4 @@
+
+# Licensed web fonts are deployed to Vercel from brand/rhapsody/fonts/web at deploy time.
+# They must never be committed: this repo is public, and font EULAs forbid public redistribution.
+site/fonts/
