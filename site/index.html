@@ -10,10 +10,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="preload" href="fonts/FAMAime-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://rhapsody-brand-wiki.vercel.app/fonts/rhapsody/rhapsody-favorit-regular.woff2" as="font" type="font/woff2" crossorigin>
 <style>
   /* FAM Aime Light — Family Type web licence, foundry-supplied WOFF2 (order #1514). */
   @font-face{font-family:"FAM Aime";src:url("fonts/FAMAime-Light.woff2") format("woff2");
     font-weight:300;font-style:normal;font-display:swap}
+  /* Rhapsody Favorit — hosted on the Rhapsody brand wiki (reference/rhapsody-brand.md). */
+  @font-face{font-family:"Rhapsody Favorit";src:url("https://rhapsody-brand-wiki.vercel.app/fonts/rhapsody/rhapsody-favorit-regular.woff2") format("woff2");
+    font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:"Rhapsody Favorit";src:url("https://rhapsody-brand-wiki.vercel.app/fonts/rhapsody/rhapsody-favorit-bold.woff2") format("woff2");
+    font-weight:700;font-style:normal;font-display:swap}
   :root{
     --ink:#1C0D52;          /* frame background, pill text */
     --lilac:#D2B4ED;        /* pills, sub-head, underscore */
@@ -29,7 +35,7 @@
     margin:0;
     background:var(--ink);
     color:var(--white);
-    font-family:Inter, "Helvetica Neue", Arial, sans-serif;
+    font-family:"Rhapsody Favorit", Inter, "Helvetica Neue", Arial, sans-serif;
     font-synthesis-weight:none;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
@@ -88,8 +94,8 @@
     align-items:baseline;
   }
   .display .mark{
-    font-family:Inter, sans-serif;
-    font-weight:500;
+    font-family:"Rhapsody Favorit", Inter, sans-serif;
+    font-weight:400;
     color:var(--lilac);
     font-size:.62em;
     margin-left:.015em;
@@ -98,7 +104,7 @@
 
   .lede{
     margin:clamp(30px,4.4vh,52px) 0 0;
-    max-width:30ch;
+    max-width:22.8em;            /* = the original 639px box at 28px — same breaks */
     color:var(--lilac-soft);
     font-size:clamp(18px,1.5vw,29px);
     line-height:1.33;
@@ -122,6 +128,7 @@
     max-width:30em;                /* holds the original 3 / 2 / 3 wrap rhythm */
   }
   .tags li{
+    font-family:Inter, sans-serif;
     background:var(--lilac);
     color:var(--ink);
     font-weight:700;
